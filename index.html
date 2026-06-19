@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料整理手记 · 竞彩网</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f4f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2e3a46;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* hero / 开场 */
+    .opening {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 3rem 2.5rem 2.5rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.5rem;
+      border: 1px solid #e6eaee;
+    }
+
+    .opening .short-line {
+      font-size: 1.1rem;
+      letter-spacing: 0.3px;
+      color: #5f6c7a;
+      margin-bottom: 0.8rem;
+      font-weight: 400;
+    }
+
+    .opening h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #1f2933;
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .opening h1 span {
+      background: linear-gradient(145deg, #2b5a7a, #1f4a66);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .opening p {
+      font-size: 1.05rem;
+      color: #3f4a56;
+      max-width: 85%;
+    }
+
+    /* 承接段落卡片 */
+    .bridge-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e6eaee;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .bridge-card p {
+      font-size: 1.02rem;
+      color: #2e3a46;
+    }
+
+    .bridge-card strong {
+      color: #245a7a;
+      font-weight: 600;
+    }
+
+    .bridge-card .inline-link {
+      color: #1f4a66;
+      text-decoration: none;
+      border-bottom: 1px solid #cdd9e3;
+      transition: border-color 0.2s;
+    }
+
+    .bridge-card .inline-link:hover {
+      border-bottom-color: #1f4a66;
+    }
+
+    /* 特点列表 — 卡片式 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0 1.8rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.6rem 1.8rem;
+      border: 1px solid #e6eaee;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.25s, transform 0.15s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+      transform: translateY(-3px);
+    }
+
+    .feature-card .emoji-marker {
+      display: inline-block;
+      font-size: 1.6rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #1b2b3a;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.2px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #4b5b6a;
+      line-height: 1.6;
+    }
+
+    /* 温和结尾区块 */
+    .gentle-closing {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2.5rem 2.5rem 2.8rem;
+      margin-top: 2.2rem;
+      border: 1px solid #e6eaee;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .gentle-closing p {
+      font-size: 1rem;
+      color: #364450;
+      margin-bottom: 1rem;
+    }
+
+    .gentle-closing .link-sentence {
+      font-size: 1.05rem;
+      background: #f5f8fa;
+      padding: 0.9rem 1.6rem;
+      border-radius: 40px;
+      display: inline-block;
+      border: 1px solid #dfe5eb;
+    }
+
+    .gentle-closing .link-sentence a {
+      color: #1f4a66;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .gentle-closing .link-sentence a:hover {
+      border-bottom-color: #1f4a66;
+    }
+
+    .faq-mini {
+      margin: 2rem 0 0.5rem;
+      border-top: 1px solid #e2e8ed;
+      padding-top: 1.8rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #1f3b4e;
+      cursor: pointer;
+      padding: 0.4rem 0;
+      font-size: 1rem;
+    }
+
+    .faq-mini details p {
+      color: #4d5d6b;
+      margin: 0.6rem 0 0.2rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 600px) {
+      .opening {
+        padding: 2rem 1.5rem;
+      }
+
+      .opening h1 {
+        font-size: 1.7rem;
+      }
+
+      .opening p {
+        max-width: 100%;
+      }
+
+      .bridge-card {
+        padding: 1.6rem 1.5rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .gentle-closing {
+        padding: 1.8rem 1.5rem;
+      }
+
+      .gentle-closing .link-sentence {
+        display: block;
+        text-align: center;
+      }
+
+      .faq-mini details p {
+        margin-left: 0.5rem;
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0e6ec;
+      margin: 2rem 0 0.8rem;
+    }
+
+    .footer-note {
+      color: #7c8b99;
+      font-size: 0.85rem;
+      text-align: center;
+      margin-top: 2.8rem;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 开场 -->
+    <div class="opening">
+      <div class="short-line">📋 从一份资料整理开始</div>
+      <h1><span>竞彩</span>与信息索引的日常</h1>
+      <p>把零散的数据、赛前参考、规则备忘整理到一起——这件事本身就有一种平静的秩序感。</p>
+    </div>
+
+    <!-- 承接段落：为什么从资料整理切入 -->
+    <div class="bridge-card">
+      <p>
+        喜欢在周末翻看赛事资料的人，大概都理解那种“提前把信息理顺”的踏实。
+        胜平负、让球、比分范围……这些内容如果分散在好几个页面，每次都要重新翻找，很消耗耐心。
+        所以我慢慢养成了一个习惯：把常用参考集中在一个地方，方便自己快速回溯。
+        而这个习惯最终让我遇到了 <strong><a href="https://jc-lottery.com" class="inline-link">竞彩网</a></strong>——它的信息结构恰好契合这种需求。
+      </p>
+    </div>
+
+    <!-- 特点列表（卡片式） -->
+    <h2 style="font-weight: 400; font-size: 1.3rem; color: #293b49; margin-bottom: 0.2rem;">整理时发现的几个特点</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="emoji-marker">🧩</div>
+        <h3>条目清晰</h3>
+        <p>赛事列表、赔率变动、让球数值都分栏陈列，不需要来回跳转页面，省去重复比对的麻烦。</p>
+      </div>
+      <div class="feature-card">
+        <div class="emoji-marker">📌</div>
+        <h3>固定索引感</h3>
+        <p>每场比赛附带编号与时间轴，像书签一样可以快速定位，尤其适合做赛前笔记时引用。</p>
+      </div>
+      <div class="feature-card">
+        <div class="emoji-marker">⚖️</div>
+        <h3>规则附注</h3>
+        <p>常见玩法说明和奖金计算示例一直放在侧边区域，不用临时去翻长篇规则文档。</p>
+      </div>
+      <div class="feature-card">
+        <div class="emoji-marker">📆</div>
+        <h3>日程分层</h3>
+        <p>已开赛、未开赛、过关场次用不同色块区分，扫一眼就能知道当前关注哪些场次。</p>
+      </div>
+    </div>
+
+    <!-- 一个自然的场景段落 -->
+    <div class="bridge-card" style="margin-top: 0.2rem;">
+      <p>
+        有时候我只是想确认一下周末两天的赛事分布，顺便看看某些场次的让球幅度。
+        打开收藏夹里那个标签页，从列表里按时间顺序扫过去，心里就有数了。
+        这种“信息在手”的感觉，大概就是资料索引带来的从容。
+      </p>
+    </div>
+
+    <!-- 温和结尾 + 链接嵌入句子 -->
+    <div class="gentle-closing">
+      <p>
+        如果你也喜欢把赛事信息整理得清清爽爽，那么不妨把 <a href="https://jc-lottery.com" style="color: #1f4a66; text-decoration: none; border-bottom: 1px solid #bccbd8;">竞彩网</a> 
+        放进自己的资料夹。它不会替你做判断，但能把判断所需的基础材料摆整齐——这就已经很有用了。
+      </p>
+
+      <!-- FAQ 摘要（点缀） -->
+      <div class="faq-mini">
+        <details>
+          <summary>❓ 一个关于「信息索引」的小问题</summary>
+          <p>整理资料时最常遇到的卡点往往不是信息太少，而是信息散落。好的索引页面就像一张折叠桌：展开就能用，收起来也不占空间。竞彩网的布局逻辑就接近这种感觉——条块分明、不堆砌。</p>
+        </details>
+      </div>
+
+      <!-- 自然句子中的第二个链接（依旧只显示「竞彩网」） -->
+      <p style="margin-top: 1.4rem; color: #586976;">
+        如果你恰好也在构建自己的赛事笔记体系，<a href="https://jc-lottery.com" style="color: #1f4a66; text-decoration: none; border-bottom: 1px solid #bccbd8;">竞彩网</a> 可以作为其中一个数据参照节点。
+      </p>
+    </div>
+
+    <hr>
+    <div class="footer-note">
+      资料整理手记 · 保持条理，保持温和
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nuriequitmcdong.github.io/jc-lottery-com/sitemap.xml
